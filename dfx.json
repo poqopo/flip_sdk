@@ -1,0 +1,30 @@
+{
+  "canisters": {
+    "flipsdk_backend": {
+      "build": "npx azle flipsdk_backend",
+      "candid": "src/flipsdk_backend/flipsdk_backend.did",
+      "gzip": true,
+      "main": "src/flipsdk_backend/src/index.ts",
+      "type": "custom",
+      "wasm": ".azle/flipsdk_backend/flipsdk_backend.wasm"
+    },
+    "flipsdk_frontend": {
+      "dependencies": [
+        "flipsdk_backend"
+      ],
+      "source": [
+        "src/flipsdk_frontend/dist"
+      ],
+      "type": "assets",
+      "workspace": "flipsdk_frontend"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
